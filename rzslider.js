@@ -1025,6 +1025,7 @@ function throttle(func, wait, options) {
       else {
         newValue = this.offsetToValue(newOffset);
         newValue = this.roundStep(newValue);
+        if (newValue > this.maxValue) newValue = this.maxValue;
         newOffset = this.valueToOffset(newValue);
       }
       this.positionTrackingHandle(newValue, newOffset);
